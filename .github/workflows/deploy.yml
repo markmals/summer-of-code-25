@@ -47,13 +47,13 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           # 1) create the project if it doesn't exist (noop on “already exists”)
           preCommands: >
-            wrangler pages project create ${{ env.PROJECT_NAME }} \
-              --production-branch=main \
+            wrangler pages project create ${{ env.PROJECT_NAME }}
+              --production-branch=main
               --commit-dirty=true || true
           # 2) deploy the built output, substituting in the real project name
           command: >
-            pages deploy docs/.vitepress/dist \
-              --project-name=${{ env.PROJECT_NAME }} \
-              --branch=main \
+            pages deploy docs/.vitepress/dist
+              --project-name=${{ env.PROJECT_NAME }}
+              --branch=main
               --commit-dirty=true
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
