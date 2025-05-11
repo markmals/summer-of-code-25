@@ -42,6 +42,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.14.4"
           # 1) Attempt to create the Pages project (noop if it already exists)
           preCommands: |
             wrangler pages project create $PROJECT_NAME --production-branch=main || true
