@@ -37,6 +37,9 @@ jobs:
       - name: 🚀 Build docs (VitePress)
         run: deno task build
 
+      - name: 🧹 Clean any existing node_modules
+        run: rm -rf node_modules
+
       - name: 🌐 Create & Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3.14.1
         with:
