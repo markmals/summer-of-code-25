@@ -1,0 +1,50 @@
+name: 🛠️ Build & Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  deployments: write
+
+# use the GitHub repo name as the Pages project name
+env:
+  PROJECT_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v1.x
+
+      - name: 🗄️ Cache Deno modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/deno
+          key: ${{ runner.os }}-deno-${{ hashFiles('deno.json') }}
+          restore-keys: |
+            ${{ runner.os }}-deno-
+
+      - name: 🚀 Build docs (VitePress)
+        run: deno task build
+
+      - name: 🌐 Create & Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # 1) Attempt to create the Pages project (noop if it already exists)
+          preCommands: |
+            wrangler pages project create $PROJECT_NAME --production-branch=main || true
+          # 2) Deploy the built output
+          command: pages deploy docs/.vitepress/dist --project-name=$PROJECT_NAME --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
