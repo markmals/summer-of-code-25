@@ -27,7 +27,7 @@ difficulty: Hard
 
 ## Recommended Skills
 
-- Strong Kotlin and Jetpack Compose knowledge
+- Kotlin and Jetpack Compose knowledge
 - Familiarity with Android’s **SystemUI**, **Launcher3/QuickStep**, and the AOSP build system (Soong)
 - Experience compiling custom ROMs and integrating proprietary blobs
 - Understanding of Android security model, SELinux, and platform signing

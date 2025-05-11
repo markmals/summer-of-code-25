@@ -46,7 +46,7 @@ Window("Compose GTK") {
 }
 ```
 
-will yield a fully native Adwaita window indistinguishable from a C/Vala application.
+will yield a fully native [Adwaita](https://developer.gnome.org/hig/guidelines/ui-styling.html) window indistinguishable from a C/Vala application.
 
 ## Expected Results
 
