@@ -15,10 +15,6 @@ const ideas: DefaultTheme.SidebarItem[] = [
                 link: '/ideas/0002-torrent-automation',
             },
             {
-                text: 'SOC-0016: Create a Custom Android Launcher',
-                link: '/ideas/0016-android-launcher',
-            },
-            {
                 text: 'SOC-0033: Develop a Custom Food Feed for Bluesky',
                 link: '/ideas/0033-bsky-food-feed',
             },
@@ -40,6 +36,10 @@ const ideas: DefaultTheme.SidebarItem[] = [
                 link: '/ideas/0011-swift-orm',
             },
             {
+                text: 'SOC-0028: Implement a Jetpack Compose Renderer for GTK 4',
+                link: '/ideas/0028-gtk-jetpack-compose',
+            },
+            {
                 text: 'SOC-0017: Create a Custom Desktop Environment for Linux',
                 link: '/ideas/0017-linux-desktop-environment',
             },
@@ -48,8 +48,8 @@ const ideas: DefaultTheme.SidebarItem[] = [
                 link: '/ideas/0018-linux-distro',
             },
             {
-                text: 'SOC-0028: Implement a Jetpack Compose Renderer for GTK 4',
-                link: '/ideas/0028-gtk-jetpack-compose',
+                text: 'SOC-0016: Create a Custom Android Launcher',
+                link: '/ideas/0016-android-launcher',
             },
             {
                 text: 'SOC-0030: Build an Android UI Bridge for Swift',
