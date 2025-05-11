@@ -24,7 +24,7 @@ jobs:
       - name: ⚙️ Setup Deno
         uses: denoland/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: 🗄️ Cache Deno modules
         uses: actions/cache@v3
