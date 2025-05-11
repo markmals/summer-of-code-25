@@ -21,10 +21,8 @@
     );
 
     --vp-home-hero-image-filter: blur(75px);
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
+    @media (prefers-color-scheme: dark) {
         --vp-c-brand-1: #5270fa;
         --vp-c-brand-2: #5270fa;
         --vp-c-brand-3: #5270fa;
@@ -37,33 +35,13 @@
     }
 }
 
-@media (max-width: 640px) {
-    h1.heading > span.name {
-        line-height: 72px;
-        font-size: 52px;
-    }
-}
-
-h1.heading > span.text {
-    line-height: 34px;
-    font-size: 28px;
-}
-
-@media (min-width: 640px) {
-    h1.heading > span.text {
-        line-height: 50px;
-        font-size: 42px;
-    }
-}
-
-.aside:has(.VPDocOutlineItem.root:empty) {
-    display: none;
-}
-
 code {
     font-size: 95%;
 }
 
-.VPNavScreenAppearance.appearance, .VPNavBarAppearance.appearance {
+button.VPNavBarHamburger.hamburger,
+.VPLink.link.VPNavBarMenuLink,
+.VPNavScreenAppearance.appearance,
+.VPNavBarAppearance.appearance {
     display: none;
 }
