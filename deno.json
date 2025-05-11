@@ -1,0 +1,25 @@
+{
+    "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
+    "nodeModulesDir": "auto",
+    "lock": false,
+    "unstable": ["fmt-component"],
+    "tasks": {
+        "dev": "deno run -A npm:vitepress dev docs --host",
+        "format": "deno fmt --write .",
+        "build": "deno run -A npm:vitepress build docs",
+        "serve": "deno run -A npm:vitepress serve docs"
+    },
+    "fmt": {
+        "lineWidth": 100,
+        "indentWidth": 4,
+        "singleQuote": true,
+        "semiColons": true,
+        "proseWrap": "preserve"
+    },
+    "imports": {
+        "vite": "npm:vite@^6.3.3",
+        "vitepress": "npm:vitepress@^1.6.3",
+        "vitepress-plugin-group-icons": "npm:vitepress-plugin-group-icons@^1.5.2",
+        "vue": "npm:vue@^3.5.13"
+    }
+}
