@@ -15,6 +15,10 @@ const ideas: DefaultTheme.SidebarItem[] = [
                 link: '/ideas/0002-torrent-automation',
             },
             {
+                text: 'SOC-0036: Write a VS Code extension for Claude Code',
+                link: '/ideas/0036-hive',
+            },
+            {
                 text: 'SOC-0033: Develop a Custom Food Feed for Bluesky',
                 link: '/ideas/0033-bsky-food-feed',
             },
